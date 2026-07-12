@@ -53,23 +53,14 @@ def main():
     log_file = log_dir / f"sqlmate_{stamp}.log"
 
     with open(log_file, "w", encoding="utf-8") as f:
-        f.write("Command:
-" + " ".join(cmd) + "
-
-")
-        f.write("STDOUT:
-" + result.stdout + "
-
-")
-        f.write("STDERR:
-" + result.stderr + "
-")
+        f.write("Command:\n" + " ".join(cmd) + "\n\n")
+        f.write("STDOUT:\n" + result.stdout + "\n\n")
+        f.write("STDERR:\n" + result.stderr + "\n")
 
     print(result.stdout, end="")
     if result.stderr:
         print(result.stderr, file=sys.stderr, end="")
-    print(f"
-Saved log to: {log_file}")
+    print(f"\nSaved log to: {log_file}")
 
     sys.exit(result.returncode)
 
