@@ -39,3 +39,4 @@ def main():
             # ... search logic
     elif args.dork:
         # existing logic
+        pass
